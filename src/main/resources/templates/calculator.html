@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pierwszy projekt springowy</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<form action="/calculator" method="post">
+    x: <input type="number" name="x" />
+    <select name="sign">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>
+    </select>
+    y: <input type="number" name="y" />
+
+    <input type="submit" value="Wyślij" />
+</form>
+<p>
+    <span th:text="${calculationForm.x}">##</span>  <span th:text="${calculationForm.sign}">+</span>
+    <span th:text="${calculationForm.y}">##</span> = <span th:text="${result}">##</span>
+</p>
+</body>
+</html>
